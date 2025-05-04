@@ -4,4 +4,4 @@
 [MITM]
 hostname= %APPEND% api-mobile.soundcloud.com
 [Script]
-SoundCloudGo+=type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=hhttps://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloudgo.js
+SoundCloudGo= type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=hhttps://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloudgo.js
