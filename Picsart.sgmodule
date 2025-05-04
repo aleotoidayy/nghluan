@@ -1,0 +1,10 @@
+#!name= 𝗣𝗶𝗰𝘀𝗮𝗿𝘁
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[Header Rewrite]
+^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json header-del if-none-match
+
+[MITM]
+hostname = %APPEND% api.picsart.c*, api.meiease.c*
+[Script]
+Picsart = type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
