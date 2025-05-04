@@ -5,4 +5,4 @@
 hostname = %APPEND% nicegram.cloud
 
 [Script]
-Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https:// raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
+Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
