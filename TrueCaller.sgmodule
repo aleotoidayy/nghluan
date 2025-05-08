@@ -2,6 +2,6 @@
 #! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼   
 
 [MITM]
-hostname = %APPEND% www.mymorpholio.com
+hostname = premium*.truecaller.com
 [Script]
-TrueCaller = type=http-response,pattern=^https:\/\/www\.mymorpholio\.com\/api\/index\.php\/rest_iap\/receipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
+Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DungHoang120401/Nobita/refs/heads/main/Scripts/TrueCaller.js
