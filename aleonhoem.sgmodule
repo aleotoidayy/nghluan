@@ -1,0 +1,50 @@
+#! name= 𝗮𝗹𝗲𝗼𝗻𝗵𝗼𝗲𝗺
+#! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+#! author= 𝗵𝗼à𝗻𝗴 𝗹𝘂ậ𝗻
+
+𝟭. 𝗟𝗶𝗴𝗵𝘁𝗿𝗼𝗼𝗺
+𝟮. 𝗟𝗼𝗰𝗸𝗲𝘁𝗚𝗼𝗹𝗱
+𝟯. 𝗦𝗼𝘂𝗻𝗱𝗖𝗹𝗼𝘂𝗱 𝗚𝗼+
+𝟰. 𝗦𝗽𝗼𝘁𝗶𝗳𝘆
+𝟱. 𝗬𝗼𝘂𝗧𝘂𝗯𝗲
+𝟲. 𝗡𝗶𝗰𝗲𝗚𝗿𝗮𝗺
+𝟳. 𝗣𝗶𝗰𝘀𝗮𝗿𝘁
+𝟴. 𝗖𝗮𝗺𝗦𝗰𝗮𝗻𝗻𝗲𝗿
+𝟵. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
+𝟭𝟬. 𝗪𝗶𝗻𝗸
+
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+[URL Rewrite]
+(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
+[MITM]
+hostname = %APPEND% photos.adobe.io
+hostname = %APPEND% api.revenuecat.com
+hostname= %APPEND% api-mobile.soundcloud.com
+hostname = %APPEND% spclient.wg.spotify.com
+hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com
+hostname = %APPEND% nicegram.cloud
+hostname = %APPEND% api.picsart.c*, api.meiease.c*
+hostname = %APPEND% ap*.intsig.net
+hostname = premium*.truecaller.com
+hostname = %APPEND% api-sub.meitu.com
+[Script]
+LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1, max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js,script-update-interval=-1
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/locketgold.js, requires-body=true, max-size=-1, timeout=60
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/deleteheader.js, timeout=60
+SoundCloudGo= type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloud.js
+spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
+spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=default,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/youtube.js,argument="{}"
+Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
+Picsart = type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
+Camscanner = requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js,type=http-response,pattern= https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
+Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
+wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+
+
