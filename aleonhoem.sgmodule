@@ -2,26 +2,28 @@
 #! name= 𝗮𝗹𝗲𝗼 𝗻𝗵𝗼 𝗲𝗺 
 #! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
 
-𝟭. 𝗟𝗶𝗴𝗵𝘁𝗿𝗼𝗼𝗺
-𝟮. 𝗟𝗼𝗰𝗸𝗲𝘁𝗚𝗼𝗹𝗱
-𝟯. 𝗦𝗼𝘂𝗻𝗱𝗖𝗹𝗼𝘂𝗱 𝗚𝗼+
-𝟰. 𝗦𝗽𝗼𝘁𝗶𝗳𝘆
-𝟱. 𝗬𝗼𝘂𝗧𝘂𝗯𝗲
-𝟲. 𝗡𝗶𝗰𝗲𝗚𝗿𝗮𝗺
-𝟳. 𝗣𝗶𝗰𝘀𝗮𝗿𝘁
-𝟴. 𝗖𝗮𝗺𝗦𝗰𝗮𝗻𝗻𝗲𝗿
-𝟵. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
-𝟭𝟬. 𝗪𝗶𝗻𝗸
-𝟭𝟭. 𝗔𝗹𝗶𝗴𝗵𝘁 𝗠𝗼𝘁𝗶𝗼𝗻
+𝟭. 𝗔𝗹𝗶𝗴𝗵𝘁 𝗠𝗼𝘁𝗶𝗼𝗻
+𝟮. 𝗟𝗶𝗴𝗵𝘁𝗿𝗼𝗼𝗺
+𝟯. 𝗟𝗼𝗰𝗸𝗲𝘁𝗚𝗼𝗹𝗱
+𝟰. 𝗦𝗼𝘂𝗻𝗱𝗖𝗹𝗼𝘂𝗱 𝗚𝗼+
+𝟱. 𝗦𝗽𝗼𝘁𝗶𝗳𝘆
+𝟲. 𝗬𝗼𝘂𝗧𝘂𝗯𝗲
+𝟳. 𝗡𝗶𝗰𝗲𝗚𝗿𝗮𝗺
+𝟴. 𝗣𝗶𝗰𝘀𝗮𝗿𝘁
+𝟵. 𝗖𝗮𝗺𝗦𝗰𝗮𝗻𝗻𝗲𝗿
+𝟭𝟬. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
+𝟭𝟭. 𝗪𝗶𝗻𝗸
 
 [General]
 bypass-system = true
 skip-proxy = *.local, *.crashlytics.com
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
+
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+
 [Header Rewrite]
 ^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json header-del if-none-match
 [URL Rewrite]
@@ -30,6 +32,7 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
 ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
+
 [MITM]
 hostname = %APPEND% photos.adobe.io
 hostname = %APPEND% api.revenuecat.com
@@ -42,6 +45,7 @@ hostname = %APPEND% ap*.intsig.net
 hostname = premium*.truecaller.com
 hostname = %APPEND% api-sub.meitu.com
 hostname = api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net
+
 [Script]
 LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1, max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js,script-update-interval=-1
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/locketgold.js, requires-body=true, max-size=-1, timeout=60
