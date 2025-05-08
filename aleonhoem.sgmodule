@@ -1,3 +1,4 @@
+#!url=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/aleonhoem.sgmodule
 #! name= 𝗮𝗹𝗲𝗼 𝗻𝗵𝗼 𝗲𝗺 
 #! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
 
@@ -9,8 +10,8 @@
 𝟲. 𝗡𝗶𝗰𝗲𝗚𝗿𝗮𝗺
 𝟳. 𝗣𝗶𝗰𝘀𝗮𝗿𝘁
 𝟴. 𝗖𝗮𝗺𝗦𝗰𝗮𝗻𝗻𝗲𝗿
-𝟵. 𝗪𝗶𝗻𝗸
-𝟭𝟬. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
+𝟵. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
+𝟭𝟬. 𝗪𝗶𝗻𝗸
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
@@ -32,8 +33,8 @@ hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.c
 hostname = %APPEND% nicegram.cloud
 hostname = %APPEND% api.picsart.c*, api.meiease.c*
 hostname = %APPEND% ap*.intsig.net
+hostname = premium*.truecaller.com
 hostname = %APPEND% api-sub.meitu.com
-hostname = %APPEND% www.mymorpholio.com
 [Script]
 LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1, max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js,script-update-interval=-1
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/locketgold.js, requires-body=true, max-size=-1, timeout=60
@@ -45,5 +46,5 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
 Picsart = type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
 Camscanner = requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js,type=http-response,pattern= https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
-TrueCaller = type=http-response,pattern=^https:\/\/www\.mymorpholio\.com\/api\/index\.php\/rest_iap\/receipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
-wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
+Wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
