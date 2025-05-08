@@ -1,5 +1,5 @@
-#! name= 𝗮𝗹𝗲𝗼 𝗻𝗵𝗼 𝗲𝗺 :<
-#! desc= 𝗯𝘆 𝗔 𝗟ẹ𝗼𝗼
+#! name= 𝗮𝗹𝗲𝗼 𝗻𝗵𝗼 𝗲𝗺 
+#! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
 
 𝟭. 𝗟𝗶𝗴𝗵𝘁𝗿𝗼𝗼𝗺
 𝟮. 𝗟𝗼𝗰𝗸𝗲𝘁𝗚𝗼𝗹𝗱
@@ -15,6 +15,8 @@
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+[Header Rewrite]
+^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json header-del if-none-match
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
@@ -29,8 +31,9 @@ hostname = %APPEND% spclient.wg.spotify.com
 hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com
 hostname = %APPEND% nicegram.cloud
 hostname = %APPEND% api.picsart.c*, api.meiease.c*
-hostname = %APPEND% www.mymorpholio.com
+hostname = %APPEND% ap*.intsig.net
 hostname = %APPEND% api-sub.meitu.com
+hostname = %APPEND% www.mymorpholio.com
 [Script]
 LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1, max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js,script-update-interval=-1
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/locketgold.js, requires-body=true, max-size=-1, timeout=60
@@ -41,5 +44,6 @@ spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=default,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/youtube.js,argument="{}"
 Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
 Picsart = type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
+Camscanner = requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js,type=http-response,pattern= https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
 TrueCaller = type=http-response,pattern=^https:\/\/www\.mymorpholio\.com\/api\/index\.php\/rest_iap\/receipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
-Wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
