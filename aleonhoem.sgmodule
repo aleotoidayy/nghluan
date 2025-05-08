@@ -12,7 +12,12 @@
 𝟴. 𝗖𝗮𝗺𝗦𝗰𝗮𝗻𝗻𝗲𝗿
 𝟵. 𝗧𝗿𝘂𝗲𝗖𝗮𝗹𝗹𝗲𝗿
 𝟭𝟬. 𝗪𝗶𝗻𝗸
+𝟭𝟭. 𝗔𝗹𝗶𝗴𝗵𝘁 𝗠𝗼𝘁𝗶𝗼𝗻
 
+[General]
+bypass-system = true
+skip-proxy = *.local, *.crashlytics.com
+tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
@@ -35,6 +40,7 @@ hostname = %APPEND% api.picsart.c*, api.meiease.c*
 hostname = %APPEND% ap*.intsig.net
 hostname = premium*.truecaller.com
 hostname = %APPEND% api-sub.meitu.com
+hostname = api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net
 [Script]
 LightRoom=type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v2\/accounts*,requires-body=1, max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js,script-update-interval=-1
 revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/locketgold.js, requires-body=true, max-size=-1, timeout=60
@@ -48,3 +54,4 @@ Picsart = type=http-response,pattern=^https:\/\/api\.(picsart|meiease)\.c(n|om)\
 Camscanner = requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js,type=http-response,pattern= https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
 Truecaller = type=http-response,pattern=^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
 Wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/alightmotion.js, requires-body=true, timeout=5, tag=Alight Motion
