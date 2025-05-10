@@ -1,0 +1,9 @@
+#!name= 𝗥𝗲𝘃𝗲𝗻𝘂𝗲𝗰𝗮𝘁
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
+
+[Script]
+type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/v\d\/subscribers\/,requires-body=false,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/revenuecat.js
+type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v\d\/subscribers\/,requires-body=true,max-size=-1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/revenuecat.js
