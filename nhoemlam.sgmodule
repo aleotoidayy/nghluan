@@ -30,6 +30,10 @@ http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountS
 
 #************************************#
 
+# 𝟭𝗕𝗹𝗼𝗰𝗸𝗲𝗿
+hostname= api.revenuecat.com
+1blocker= type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/blocker.js
+
 # 𝗔𝗹𝗼𝗵𝗮 𝗩𝗽𝗻
 hostname= api.alohaprofile.com
 AlohaVPN= type=http-response,pattern=^https:\/\/api\.alohaprofile\.com/v\d\/(profile_info|subscription_postback|profile_oauth),requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/aloha.js
