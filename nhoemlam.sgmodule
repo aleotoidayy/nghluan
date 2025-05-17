@@ -24,15 +24,17 @@ tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 hostname = %APPEND% api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net, api.alohaprofile.com, photos.adobe.io, api.revenuecat.com, api-mobile.soundcloud.com, spclient.wg.spotify.com, redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com, nicegram.cloud, api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, ap*.intsig.net, premium*.truecaller.com, api-sub.meitu.com 
 
 [Script]
+# 𝟭𝗕𝗹𝗼𝗰𝗸𝗲𝗿
+hostname= api.revenuecat.com
+1blocker= type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/blocker.js
+
+#************************************#
+
 # 𝗔𝗹𝗶𝗴𝗵𝘁 𝗠𝗼𝘁𝗶𝗼𝗻
 hostname = api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net
 http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/alightmotion.js, requires-body=true, timeout=5
 
 #************************************#
-
-# 𝟭𝗕𝗹𝗼𝗰𝗸𝗲𝗿
-hostname= api.revenuecat.com
-1blocker= type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v1\/subscribers,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/blocker.js
 
 # 𝗔𝗹𝗼𝗵𝗮 𝗩𝗽𝗻
 hostname= api.alohaprofile.com
