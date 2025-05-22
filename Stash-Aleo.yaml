@@ -1,0 +1,46 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: null
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver: null
+  fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+proxies:
+proxy-groups:
+  - {name: 𝗮𝗹𝗲𝗼𝘁𝗼𝗶𝗱𝗮𝘆𝘆, type: select, proxies: [DIRECT, 𝐀𝐮𝐭𝐨 𝐒𝐞𝐥𝐞𝐜𝐭], hidden: null, icon: 'https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vip.png', ssid-policy: {cellular: 𝐀𝐮𝐭𝐨 𝐒𝐞𝐥𝐞𝐜𝐭, default: DIRECT, wifi: direct}, interval: null, lazy: true}
+  - {name: 𝐀𝐮𝐭𝐨 𝐒𝐞𝐥𝐞𝐜𝐭, type: select, proxies: [𝐅𝐮𝐥𝐥 𝐒𝐞𝐯𝐞𝐫, 𝐀𝐮𝐭𝐨 𝐒𝐢𝐧𝐠𝐚𝐩𝐨𝐫𝐞, 𝐀𝐮𝐭𝐨 𝐕𝐢𝐞𝐭𝐍𝐚𝐦, 𝐆𝐚𝐦𝐢𝐧𝐠], use: null, include-all: null, use-url: null, icon: 'https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/rocket.png', interval: null, lazy: true}
+  - icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/auto.png
+    name: 𝐅𝐮𝐥𝐥 𝐒𝐞𝐯𝐞𝐫
+    type: select
+    use:
+      - VPN
+    interval: 10
+    lazy: true
+  - icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/game.png
+    name: 𝐆𝐚𝐦𝐢𝐧𝐠 
+    proxies: null
+    type: select
+    use:
+      - VPN
+    filter: Gaming
+    interval: null
+    lazy: true
+    strategy: consistent-hashing
+  - {name: 𝐀𝐮𝐭𝐨 𝐕𝐢𝐞𝐭𝐍𝐚𝐦, type: url-test, proxies: null, url: 'http://www.gstatic.com/generate_204', interval: null, hidden: null, use-url: null, icon: 'https://cdn3.iconfinder.com/data/icons/shirt-world-flags-1/64/shirt_world_flags-55-1024.png', use: [VPN], filter: '🇻🇳', lazy: true}
+  - {name: 𝐀𝐮𝐭𝐨 𝐒𝐢𝐧𝐠𝐚𝐩𝐨𝐫𝐞, type: url-test, proxies: null, url: 'http://www.gstatic.com/generate_204', interval: null, hidden: null, use-url: null, icon: 'https://cdn3.iconfinder.com/data/icons/shirt-world-flags-1/64/shirt_world_flags-28-1024.png', use: [VPN], filter: 🇸🇬, lazy: true}
+rule-providers: {}
+proxy-providers:
+  VPN:
+    interval: 0
+    url: 𝐃𝐚́𝐧 𝐒𝐮𝐛
+rules:
+  - MATCH,𝗮𝗹𝗲𝗼𝘁𝗼𝗶𝗱𝗮𝘆𝘆
