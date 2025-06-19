@@ -1,4 +1,4 @@
-// Author: aleo an cap 
+// Author: aleotoidayy
 // Date: 2025-06-01
 // Purpose: CamScanner Premium
 
