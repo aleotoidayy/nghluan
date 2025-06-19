@@ -1,3 +1,7 @@
+// Author: aleotoidayy
+// Date: 2025-06-01
+// Purpose: Lightroom
+
 body = $response.body.replace(/while.{7}\n/, "");
 let obj = JSON.parse(body);
 obj.entitlement.status="subscriber";
