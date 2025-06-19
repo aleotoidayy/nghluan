@@ -1,3 +1,7 @@
+// Author: aleotoidayy
+// Date: 2025-06-01
+// Purpose: 1Blocker Lifetime
+
 var body = $response.body;
 var objk = JSON.parse(body);
 
