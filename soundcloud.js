@@ -1,3 +1,7 @@
+// Author: aleotoidayy
+// Date: 2025-06-01
+// Purpose: SoundCloud Go
+
 var body = $response.body; 
 var obj = JSON.parse(body); 
 
