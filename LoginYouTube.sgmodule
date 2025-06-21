@@ -1,0 +1,7 @@
+#!name= Đă𝗻𝗴 𝗡𝗵ậ𝗽 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗠𝗼𝗱
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% accounts.google.com
+[Script]
+FIX-YouTube-Login = type=http-request,pattern=^https:\/\/accounts\.google\.com\/embedded\/setup\/v2\/safarivc,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/loginyoutube.js
