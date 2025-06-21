@@ -1,8 +1,0 @@
-#!name= 𝗟𝗼𝗴𝗶𝗻 𝗬𝗼𝘂𝗧𝘂𝗯𝗲
-#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
-
-[Script]
-FIX-YouTube-Login = type=http-request,pattern=^https:\/\/accounts\.google\.com\/embedded\/setup\/v2\/safarivc,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/utub.js
-
-[MITM]
-hostname = %APPEND% accounts.google.com
