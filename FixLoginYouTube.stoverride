@@ -1,5 +1,5 @@
-#!name=LoginYouTube
-#!desc=aleoo
+#!name=Fix Login YouTube Mod
+#!desc=by aleoo
 
 http:
   mitm:
