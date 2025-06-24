@@ -1,0 +1,14 @@
+name: Đăng Nhập YouTube Mod
+description: by aleoo
+resource: true
+priority: 100
+mitm:
+  hostname:
+    - accounts.google.com
+scripts:
+  - name: FIX-YouTube-Login
+    type: http-request
+    pattern: ^https:\/\/accounts\.google\.com\/embedded\/setup\/v2\/safarivc
+    requires_body: true
+    max_size: 0
+    script_url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/loginyoutube.js
