@@ -1,5 +1,5 @@
-#!name=Đă𝗻𝗴 𝗡𝗵ậ𝗽 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗠𝗼𝗱
-#!desc=𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+#!name=Fix Login YouTube
+#!desc=by aleoo
 
 [MITM]
 hostname = %APPEND% accounts.google.com
