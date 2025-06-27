@@ -2,6 +2,8 @@
 #!desc= 𝙗𝙮 𝙖𝙡𝙚𝙤𝙤
 name: aleo nho em
 desc: by aleoo
+icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/kittyy.JPG
+
 http:
   mitm:
     - api.revenuecat.com
