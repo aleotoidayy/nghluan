@@ -1,0 +1,152 @@
+#!name= 𝙖𝙡𝙚𝙤 𝙣𝙝𝙤 𝙚𝙢
+#!desc= 𝙗𝙮 𝙖𝙡𝙚𝙤𝙤
+name: aleo nho em
+desc: by aleoo
+icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/pangpang.JPG
+
+http:
+  mitm:
+    - api.revenuecat.com
+    - buy.itunes.apple.com
+    - us-central1-alight-creative.cloudfunctions.net
+    - api.alohaprofile.com
+    - photos.adobe.io
+    - api-mobile.soundcloud.com
+    - spclient.wg.spotify.com
+    - redirector*.googlevideo.com
+    - "*.googlevideo.com"
+    - www.youtube.com
+    - s.youtube.com
+    - youtubei.googleapis.com
+    - accounts.google.com
+    - nicegram.cloud
+    - api.picsart.com
+    - ap*.intsig.net
+    - premium*.truecaller.com
+    - api-sub.meitu.com
+    - mobile-api.adguard.org
+  script:
+    - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
+      name: AdGuard
+      type: response
+      require-body: true
+    - match: ^https:\/\/us-central1-alight-creative.cloudfunctions.net\/getAccountStatusAndLicenses
+      name: AlightMotion
+      type: response
+      require-body: true
+      timeout: 5
+    - match: ^https:\/\/api\.alohaprofile\.com\/v\d\/(profile_info|subscription_postback|profile_oauth)
+      name: AlohaVPN
+      type: response
+      require-body: true
+    - match: ^https:\/\/photos\.adobe\.io\/v2\/accounts.*
+      name: LightRoom
+      type: response
+      require-body: true
+      max-size: 0
+    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
+      name: revenuecat
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 60
+    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers)
+      name: deleteHeader
+      type: request
+      timeout: 60
+    - match: https://api-mobile.soundcloud.com/configuration/ios
+      name: SoundCloudGo
+      type: response
+      require-body: true
+    - match: ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/
+      name: spotify-json
+      type: request
+    - match: ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$
+      name: spotify-proto
+      type: response
+      require-body: true
+      binary-mode: true
+    - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
+      name: youtube.response
+      type: response
+      require-body: true
+      max-size: -1
+      binary-body-mode: true
+    - match: ^https:\/\/accounts\.google\.com\/embedded\/setup\/v2\/safarivc
+      name: FIX-YouTube-Login
+      type: request
+      require-body: true
+      max-size: 0
+    - match: ^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess)
+      name: Nicegram
+      type: response
+      require-body: true
+      max-size: 0
+    - match: https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
+      name: Camscanner
+      type: response
+      require-body: true
+    - match: https://api.picsart.com/gw-v2/shop/subscription/apple/purchases
+      name: Picsart
+      type: request
+      require-body: true
+      timeout: 5
+    - match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)
+      name: Truecaller
+      type: response
+      require-body: true
+      max-size: 0
+    - match: ^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group
+      name: wink
+      type: response
+      require-body: true
+      max-size: 0
+script-providers:
+  AdGuard:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/adguard.js
+    interval: 86400
+  AlightMotion:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/alightmotion.js
+    interval: 86400
+  AlohaVPN:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/aloha.js
+    interval: 86400
+  LightRoom:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js
+    interval: 86400
+  revenuecat:
+    url: https://raw.githubusercontent.com/aleotoidayy/klinhh/klinhh/revenuecat.js
+    interval: 86400
+  deleteHeader:
+    url: https://raw.githubusercontent.com/aleotoidayy/klinhh/klinhh/deleteheader.js
+    interval: 86400
+  SoundCloudGo:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloud.js
+    interval: 86400
+  spotify-json:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
+    interval: 86400
+  spotify-proto:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js
+    interval: 86400
+  youtube.response:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/youtube.js
+    interval: 86400
+  FIX-YouTube-Login:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/loginyoutube.js
+    interval: 86400
+  Nicegram:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js
+    interval: 86400
+  Camscanner:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js
+    interval: 86400
+  Picsart:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
+    interval: 86400
+  Truecaller:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
+    interval: 86400
+  wink:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+    interval: 86400
