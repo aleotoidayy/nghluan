@@ -1,0 +1,7 @@
+#! name= Speed Test Master
+#! desc= 𝙗𝙮 𝙖𝙡𝙚𝙤𝙤
+
+[MITM]
+hostname= %APPEND% iap.etm.tech
+[Script]
+SpeedTestMaster = type=http-response, pattern=^https:\/\/iap\.etm\.tech\/receipts, requires-body=true, max-size=-1, timeout=300, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/speedtestmaster.js
