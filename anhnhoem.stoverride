@@ -25,6 +25,7 @@ http:
     - premium*.truecaller.com
     - api-sub.meitu.com
     - mobile-api.adguard.org
+    - iap.etm.tech
   script:
     - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
       name: AdGuard
@@ -101,6 +102,12 @@ http:
       type: response
       require-body: true
       max-size: 0
+    - match: ^https:\/\/iap\.etm\.tech\/receipts
+      name: SpeedTestMaster
+      type: response
+      require-body: true
+      max-size: -1
+      timeout: 300
 script-providers:
   AdGuard:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/adguard.js
@@ -149,4 +156,7 @@ script-providers:
     interval: 86400
   wink:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
+    interval: 86400
+  SpeedTestMaster:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/speedtestmaster.js
     interval: 86400
