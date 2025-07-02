@@ -188,7 +188,7 @@ proxy-groups:
       - 🇻🇳 Việt Nam
       - 🇯🇵 Nhật Bản
       - 🇸🇬 Singapore
-      - 🇺🇸 USA
+      - 🇺🇸 Mỹ
       - DIRECT
 
   - name: 🇻🇳 Việt Nam
@@ -218,7 +218,7 @@ proxy-groups:
       - 🇸🇬 ⚡️ Singapore 1
       - DIRECT
 
-  - name: 🇺🇸 USA
+  - name: 🇺🇸 Mỹ
     type: select
     proxies:
       - 🇺🇸 USA 1
