@@ -13,6 +13,7 @@ http:
     - photos.adobe.io
     - api-mobile.soundcloud.com
     - spclient.wg.spotify.com
+    - "*spclient.spotify.com"
     - redirector*.googlevideo.com
     - "*.googlevideo.com"
     - www.youtube.com
@@ -26,6 +27,7 @@ http:
     - api-sub.meitu.com
     - mobile-api.adguard.org
     - iap.etm.tech
+
   script:
     - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
       name: AdGuard
@@ -67,6 +69,11 @@ http:
       type: response
       require-body: true
       binary-mode: true
+    - match: ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$
+      name: spotify-header
+      type: request
+      action: header-del
+      header: if-none-match
     - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
       name: youtube.response
       type: response
@@ -108,6 +115,7 @@ http:
       require-body: true
       max-size: -1
       timeout: 300
+
 script-providers:
   AdGuard:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/adguard.js
