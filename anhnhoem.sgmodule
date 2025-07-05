@@ -15,13 +15,15 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 [Header Rewrite]
 ^https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json header-del if-none-match
 
+http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
+
 [General]
 bypass-system = true
 skip-proxy = *.local, *.crashlytics.com
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
 [MITM]
-hostname= %APPEND% api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net, api.alohaprofile.com, photos.adobe.io, api.revenuecat.com, api-mobile.soundcloud.com, spclient.wg.spotify.com, redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com, nicegram.cloud, api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, ap*.intsig.net, premium*.truecaller.com, api-sub.meitu.com, mobile-api.adguard.org, iap.etm.tech
+hostname= %APPEND% api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net, api.alohaprofile.com, photos.adobe.io, api.revenuecat.com, api-mobile.soundcloud.com, spclient.wg.spotify.com, *spclient.spotify.com, redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com, nicegram.cloud, api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, ap*.intsig.net, premium*.truecaller.com, api-sub.meitu.com, mobile-api.adguard.org, iap.etm.tech
 
 [Script]
 
@@ -65,7 +67,7 @@ SoundCloudGo= type=http-response,pattern=https://api-mobile.soundcloud.com/confi
 ————————————————————————————————————————————————————
 
 # Spotify
-hostname= spclient.wg.spotify.com
+hostname= spclient.wg.spotify.com, *spclient.spotify.com
 spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
 
 spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js
