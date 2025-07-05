@@ -69,11 +69,6 @@ http:
       type: response
       require-body: true
       binary-mode: true
-    - match: ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$
-      name: spotify-header
-      type: request
-      action: header-del
-      header: if-none-match
     - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
       name: youtube.response
       type: response
