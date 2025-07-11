@@ -88,7 +88,7 @@ Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/us
 
 # Calm
 hostname= api.calm.com
-Calm = type=http-response,pattern=https://api.calm.com/(me|device|ios/receipt), requires-body=1, max-size=0, script-update-interval=0, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/calm.js
+calm = type=http-response,pattern=https://api.calm.com/(me|device|ios/receipt), requires-body=1, max-size=0, script-update-interval=0, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/calm.js
 
 ————————————————————————————————————————————————————
 
