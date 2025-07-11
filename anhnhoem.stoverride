@@ -27,6 +27,7 @@ http:
     - api-sub.meitu.com
     - mobile-api.adguard.org
     - iap.etm.tech
+    - api.calm.com
 
   script:
     - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
@@ -85,6 +86,11 @@ http:
       type: response
       require-body: true
       max-size: 0
+    - match: https://api.calm.com/(me|device|ios/receipt)
+      name: calm
+      type: response
+      require-body: true
+      timeout: 10
     - match: https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
       name: Camscanner
       type: response
@@ -147,6 +153,9 @@ script-providers:
     interval: 86400
   Nicegram:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js
+    interval: 86400
+  calm:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/calm.js
     interval: 86400
   Camscanner:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js
