@@ -1,0 +1,7 @@
+#!name= 𝗖𝗮𝗹𝗺
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname= %APPEND% api.calm.com
+[Script]
+caml解锁 = type=http-response,pattern=https://api.calm.com/(me|device|ios/receipt), requires-body=1, max-size=0, script-update-interval=0, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/calm.js
