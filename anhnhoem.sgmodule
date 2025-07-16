@@ -4,6 +4,14 @@
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+RULE-SET,quangcao,REJECT
+RULE-SET,truyen,REJECT
+RULE-SET,porn,REJECT
+
+[Rule-Set]
+quangcao = https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/qc.list
+truyen = https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truyen.list
+porn = https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/porn.list
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
