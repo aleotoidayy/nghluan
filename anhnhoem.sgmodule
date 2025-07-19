@@ -31,7 +31,7 @@ skip-proxy = *.local, *.crashlytics.com
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
 [MITM]
-hostname= %APPEND% api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net, api.alohaprofile.com, photos.adobe.io, api.revenuecat.com, api-mobile.soundcloud.com, spclient.wg.spotify.com, *spclient.spotify.com, redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com, nicegram.cloud, api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, ap*.intsig.net, premium*.truecaller.com, api-sub.meitu.com, mobile-api.adguard.org, iap.etm.tech, api.calm.com
+hostname= %APPEND% api.revenuecat.com, buy.itunes.apple.com, us-central1-alight-creative.cloudfunctions.net, api.alohaprofile.com, photos.adobe.io, api.revenuecat.com, api-mobile.soundcloud.com, spclient.wg.spotify.com, *spclient.spotify.com, redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com, nicegram.cloud, api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, ap*.intsig.net, premium*.truecaller.com, api-sub.meitu.com, mobile-api.adguard.org, iap.etm.tech, api.calm.com, api.rc-backup.com
 
 [Script]
 
@@ -51,6 +51,12 @@ http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountS
 # Aloha Vpn
 hostname= api.alohaprofile.com
 AlohaVPN= type=http-response,pattern=^https:\/\/api\.alohaprofile\.com/v\d\/(profile_info|subscription_postback|profile_oauth),requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/aloha.js
+
+————————————————————————————————————————————————————
+
+# BuyiTunes
+hostname= buy.itunes.apple.com
+BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, requires-body=true, max-size=-1, timeout=60, script-path=https://gist.githubusercontent.com/ddgksf2013/9e0f6c7341beea09a31aa309d9d7f502/raw/buyitunes.js
 
 ————————————————————————————————————————————————————
 
@@ -127,3 +133,12 @@ wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip
 # Speed Test Master
 hostname= iap.etm.tech
 SpeedTestMaster = type=http-response, pattern=^https:\/\/iap\.etm\.tech\/receipts, requires-body=true, max-size=-1, timeout=300, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/speedtestmaster.js
+
+————————————————————————————————————————————————————
+
+# RevenueCat
+hostname= api.revenuecat.com, api.rc-backup.com
+RevenueCatVip = type=http-response, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$), max-size=-1, timeout=60, script-path=https://gist.githubusercontent.com/ddgksf2013/dbb1695cd96743eef18f3fac5c6fe227/raw/revenuecat.js, requires-body=true
+
+RevenueCatDeleteHeader = type=http-request, pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers), timeout=60, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
+
