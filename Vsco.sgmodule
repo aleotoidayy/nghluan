@@ -1,0 +1,14 @@
+#!name= 𝗩𝗦𝗖𝗢
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼 
+
+[General]
+bypass-system = true
+skip-proxy = *.local, *.crashlytics.com
+tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
+
+[MITM]
+hostname = api.revenuecat.com, buy.itunes.apple.com
+
+[Script]
+vsco = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), requires-body=true, timeout=5, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vsco.js
+vscoo = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers(\/.*?)?$), requires-body=true, timeout=5, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vscoo.js
