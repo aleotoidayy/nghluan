@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,cloudflareinsights.com,REJECT
 DOMAIN-SUFFIX,cloudfront.net,REJECT
 DOMAIN-SUFFIX,crashlytics.com,REJECT
 DOMAIN-SUFFIX,cutt.ly,REJECT
+DOMAIN-SUFFIX,data.bilibili.com,REJECT
 DOMAIN-SUFFIX,dantri.com.vn,REJECT
 DOMAIN-SUFFIX,discord.com,REJECT
 DOMAIN-SUFFIX,doubleclick.net,REJECT
@@ -80,10 +81,13 @@ DOMAIN-SUFFIX,tinyurl.com,REJECT
 DOMAIN-SUFFIX,tumblr.com,REJECT
 DOMAIN-SUFFIX,tuoitre.vn,REJECT
 DOMAIN-SUFFIX,twitter.com,REJECT
+DOMAIN-SUFFIX,tracking-adx.biliintl.com,REJECT
 DOMAIN-SUFFIX,t.co,REJECT
 DOMAIN-SUFFIX,unity3d.com,REJECT
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
 DOMAIN,video.premiumtag.net,REJECT
+DOMAIN-SUFFIX,upos-sz-mirroralibstar1.bilivideo.com,REJECT
+DOMAIN-SUFFIX,upos-sz-mirrorasiabstar1.bilivideo.com,REJECT
 DOMAIN-SUFFIX,vk.com,REJECT
 DOMAIN-SUFFIX,vcmedia.vn,REJECT
 DOMAIN-SUFFIX,vnexpress.net,REJECT
