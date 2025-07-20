@@ -18,7 +18,7 @@ dns:
     ipcidr: [240.0.0.0/4, 0.0.0.0/32]
 
 proxy-providers:
-  VPN:
+  aleotoidayy:
     url: dán sub
     interval: 3600
     path: ./provider/vpn.yaml
@@ -37,7 +37,7 @@ proxy-groups:
   - name: Việt Nam
     type: select
     icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/VietNam.png
-    use: [VPN]
+    use: [aleotoidayy]
     filter: "🇻🇳"
     interval: 300
     lazy: true
