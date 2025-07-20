@@ -1,5 +1,6 @@
 mixed-port: 7890
 allow-lan: true
+bind-address: '*'
 mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
@@ -7,40 +8,48 @@ external-controller: '127.0.0.1:9090'
 dns:
   enable: true
   ipv6: false
+  use-hosts: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver: [8.8.8.8, 1.1.1.1]
   fallback:
+    - https://doh.dns.sb/dns-query
     - https://dns.cloudflare.com/dns-query
     - tls://8.8.4.4:853
   fallback-filter:
     geoip: true
     ipcidr: [240.0.0.0/4, 0.0.0.0/32]
 
-proxy-providers:
-  aleotoidayy:
-    url: dán sub
-    interval: 3600
-    path: ./provider/aleotoidayy.yaml
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
+proxies:
+  - name: "🇻🇳𝗗𝗡𝟱 𝗩𝗶𝗻𝗮𝗣𝗵𝗼𝗻𝗲"
+    type: vmess
+    server: 160.191.245.41
+    port: 80
+    uuid: 3d48ff93-a432-4e40-8dfa-27abe4814da9
+    alterId: 0
+    cipher: auto
+    tls: false
+    network: ws
+    ws-opts:
+      path: "/"
+      headers:
+        Host: my.vnpt.com.vn
+
+  - name: "🇻🇳𝗗𝗡𝟱 𝗠𝗼𝗯𝗶𝗳𝗼𝗻𝗲"
+    type: trojan
+    server: 160.191.245.41
+    port: 443
+    password: 3d48ff93-a432-4e40-8dfa-27abe4814da9
+    sni: my.vnpt.com.vn
+    skip-cert-verify: true
 
 proxy-groups:
   - name: 🍓 Auto Select
     type: select
     proxies:
-      - Việt Nam
+      - 🇻🇳𝗗𝗡𝟱 𝗩𝗶𝗻𝗮𝗣𝗵𝗼𝗻𝗲
+      - 🇻🇳𝗗𝗡𝟱 𝗠𝗼𝗯𝗶𝗳𝗼𝗻𝗲
       - DIRECT
-
-  - name: Việt Nam
-    type: select
-    icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vietnam.png
-    use: [aleotoidayy]
-    filter: "🇻🇳"
-    interval: 300
-    lazy: true
 
 rules:
   - MATCH,🍓 Auto Select
