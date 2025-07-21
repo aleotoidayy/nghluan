@@ -1,0 +1,8 @@
+#!name= 𝗦𝗵𝗮𝗿𝗽 𝗔𝗜
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
+
+[Script]
+Sharp=type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/sharpai.js
