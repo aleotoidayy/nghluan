@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: Alight Motion 
-
 var objc = JSON.parse($response.body);
 objc = {
   result: {
