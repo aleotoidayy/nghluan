@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: AdGuard Premium
-
 var body = $response.body;
 var obj = JSON.parse(body);
 
