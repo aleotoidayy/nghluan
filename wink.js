@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: Wink Vip
-
 let body = $response.body;
 let json = JSON.parse(body);
 
