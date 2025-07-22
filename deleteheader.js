@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: Locket Gold
-
 const version = 'V1.0.2';
 
 
