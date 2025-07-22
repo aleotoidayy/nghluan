@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: CamScanner Premium
-
 var banhsbao = JSON.parse($response.body);
 const vipa = '/purchase/cs/query_property';
 const vipb = '/queryProperty';
