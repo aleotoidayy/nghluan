@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: Truecaller Premium
-
 function findUrl(_reg) {
   if (_reg.test($request.url)) {
     return $request.url;
