@@ -1,7 +1,3 @@
-// Author: aleotoidayy
-// Date: 2025-06-01
-// Purpose: Picsart Gold
-
 let objc = {
   "status" : "success",
   "response" : [
