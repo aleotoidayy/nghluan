@@ -1,7 +1,0 @@
-#!name= Termius
-#!desc= by aleoo
-
-[MITM]
-hostname= %APPEND% api.termius.com
-[Script]
-termius = type=http-response, pattern=^https:\/\/api\.termius\.com\/api\/public\/v4\/account\/subscription\/?, requires-body=1, script-path=https://raw.githubusercontent.com/DungHoang120401/Nobita/main/Scripts/terminus.js
