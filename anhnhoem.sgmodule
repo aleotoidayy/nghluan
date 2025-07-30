@@ -4,19 +4,6 @@
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
-URL-REGEX,^https?:\/\/.*(vipads|sklnk|trk|ref|click|go2cloud|clickmeter|goadservices|goads|trafficfactory|adfoc).*\.(com|net|live|link|click)\/.*,REJECT
-URL-REGEX,^https?:\/\/.*chubbyexemplaryhardiness\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/.*antirustdynamicsulfite\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/.*avalanchetremorunfilled\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/.*broadsidedaisysanta\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/.*concludelivingshowman\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/.*darnobedienceupscale\.com\/sklnk.*,REJECT
-URL-REGEX,^https?:\/\/c\.lazada\.vn\/.*,REJECT
-URL-REGEX,^https?:\/\/shopee\.vn\/universal-link\/.*,REJECT
-RULE-SET,ads,REJECT
-
-[Rule-Set]
-ads = https://gist.github.com/aleotoidayy/44abcffa5c58a50e72c1f07414d77d8d/raw/ed4b77b956e2241680503e09f4cae78785458b40/ads.list
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
