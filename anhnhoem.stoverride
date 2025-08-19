@@ -104,16 +104,16 @@ http:
       require-body: true
       max-size: 0
     - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-       name: vsco
-       type: response
-       require-body: true
-       timeout: 5
+      name: vsco
+      type: response
+      require-body: true
+      timeout: 5
     - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers(\/.*?)?$)
-       name: vscoo
-       type: request
-       require-body: true
-       timeout: 5
-        - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
+      name: vscoo
+      type: request
+      require-body: true
+      timeout: 5
+    - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
       name: Sharp
       type: response
       require-body: true
