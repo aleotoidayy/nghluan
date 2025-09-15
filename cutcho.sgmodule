@@ -142,4 +142,8 @@ OldRoll=type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyRe
 hostname= buy.itunes.apple.com
 intoLive=type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/intolive.js
 
+————————————————————————————————————————————————————
+# Bazaart
+hostname= buy.itunes.apple.com
+Bazaart=type=http-response,pattern=https://buy.itunes.apple.com/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/bazaart.js
 
