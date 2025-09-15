@@ -131,3 +131,15 @@ SpeedTestMaster = type=http-response, pattern=^https:\/\/iap\.etm\.tech\/receipt
 # Sharp AI
 hostname= api.revenuecat.com
 Sharp=type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$),requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/sharpai.js
+
+————————————————————————————————————————————————————
+# OldRoll
+hostname= buy.itunes.apple.com
+OldRoll=type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/oldroll.js
+
+————————————————————————————————————————————————————
+# intoLive
+hostname= buy.itunes.apple.com
+intoLive=type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/intolive.js
+
+
