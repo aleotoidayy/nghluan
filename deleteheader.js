@@ -1,4 +1,4 @@
-Const version = 'V1.0.3';
+const version = 'V1.0.3';
 
 
 function removeHeader(headers, key) {
