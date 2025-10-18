@@ -1,17 +1,4 @@
-const version = 'V1.0.3';
+const version = 'V1.0.2';
 
 
-function removeHeader(headers, key) {
-    const lowerKey = key.toLowerCase();
-    if (headers[key]) {
-        delete headers[key];
-    }
-    if (headers[lowerKey]) {
-        delete headers[lowerKey];
-    }
-}
-var modifiedHeaders = $request.headers;
-removeHeader(modifiedHeaders, "If-None-Match");
-removeHeader(modifiedHeaders, "X-RevenueCat-ETag");
-removeHeader(modifiedHeaders, "X-Headers-Hash");
-$done({headers: modifiedHeaders});
+function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
