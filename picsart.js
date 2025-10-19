@@ -1,37 +1,45 @@
 let objc = {
-  "status" : "success",
-  "response" : [
+  "status": "success",
+  "response": [
     {
-      "is_eligible_for_grant" : true,
-      "limitation" : {
-        "max_count" : 10,
-        "limits_exceeded" : false
-      },
-      "expire_date" : 4093902846000,
-      "order_id" : "160001326559771",
-      "purchase_date" : 1663982350000,
-      "original_order_id" : "160001326559771",
-      "reason" : "ok",
-      "is_eligible_for_introductory" : false,
-      "subscription_id" : "com.picsart.studio.subscription_plus_yearly",
-      "is_trial" : false,
-      "status" : "SUBSCRIPTION_PURCHASED",
-      "plan_meta" : {
-        "product_id" : "subscription_plus_yearly",
-        "frequency" : "yearly",
-        "scope_id" : "full",
-        "id" : "com.picsart.studio.subscription_plus_yearly",
-        "storage_limit_in_mb" : 5120,
-        "level" : 1500,
-        "type" : "renewable",
-        "description" : "plus",
-        "tier_id" : "gold_old",
-        "permissions" : [
+      "is_eligible_for_grant": true,
+      
+      "status": "SUBSCRIPTION_PURCHASED", 
+      "is_trial": false,
+      "subscription_id": "com.picsart.studio.subscription_pro_3_yearly",
+      "plan_meta": {
+        "permissions": [
           "premium_tools_standard",
-          "premium_tools_ai"
-        ]
-      }
+          "premium_tools_ai",
+        ],
+        "auto_renew_product_id": "com.picsart.studio.subscription_pro_3_yearly",
+        "level": 2000, 
+        "storage_limit_in_mb": 102400, 
+        "id": "com.picsart.studio.subscription_pro_3_yearly",
+        "frequency": "yearly",
+        "type": "renewable",
+        "scope_id": "full",
+        "product_id": "com.picsart.studio.subscription_pro_3_yearly",
+        "tier_id": "pro" 
+      },
+      "limitation": {
+        "max_count": 10,
+        "limits_exceeded": false
+      },
+      "is_eligible_for_introductory": true,
+      "reason": "ok",
+
+      "purchase_date": 1735689600000, 
+      "expire_date": 4070908800000,   
+      "order_id": "2000001036585376", 
+      "original_order_id": "2000000980730539"
     }
   ]
-}
-$done({ response: {body: JSON.stringify(objc),status: 200} });
+};
+
+$done({
+    response: {
+        body: JSON.stringify(objc),
+        status: 200
+    }
+});
