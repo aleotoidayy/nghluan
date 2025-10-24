@@ -14,7 +14,7 @@ const vip = {
       "renew_method" : "appstore",
       "ys_first_pay" : 0,
       "initial_tm" : "4070908800",
-      "product_id" : "com.intsig.camscanner.premiums.oneyear.autorenewable.free.test1",
+      "product_id" : "com.intsig.camscanner.premiums.oneyear.autorenewable.svip.recall.v3",
       "vip_level_info" : {
         "score" : 0,
         "level" : 0,
@@ -26,7 +26,7 @@ const vip = {
       "last_payment_method" : "appstore",
       "grade" : 2,
       "svip" : 1,
-      "expiry" : 4092599349,
+      "expiry" : 4070908800,
       "pending" : 0,
       "level_info" : {
         "level" : 1,
