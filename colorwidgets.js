@@ -1,0 +1,21 @@
+var aleoo = JSON.parse($response.body);
+aleoo.subscriber.entitlements = {
+    'pro': {
+        'expires_date': '2099-01-01T02:33:33Z',
+        'product_identifier': 'cw_2499_1y',
+        'purchase_date': '2025-01-01T02:33:33Z'
+    }
+};
+aleoo.subscriber.original_purchase_date = '2025-01-01T02:33:33Z';
+aleoo.subscriber.subscriptions = {
+    'cw_2499_1y': {
+        'expires_date': '2099-01-01T06:06:06Z',
+        'original_purchase_date': '2025-01-01T02:33:33Z',
+        'purchase_date': '2025-01-01T02:33:33Z',
+        'ownership_type': 'PURCHASED',
+        'store': 'app_store'
+    }
+};
+$done({
+    'body': JSON.stringify(aleoo)
+});
