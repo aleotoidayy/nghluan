@@ -1,0 +1,7 @@
+#!name= 𝗔𝗽𝗽𝗥𝗮𝘃𝗲𝗻
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MitM]
+hostname = %APPEND% appraven.net
+[Script]
+AppRaven=type=http-response, pattern=https://appraven.net/appraven/graphql, requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/appraven.js
