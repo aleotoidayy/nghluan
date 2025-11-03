@@ -1,0 +1,7 @@
+#!name= 𝗕𝟲𝟭𝟮
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% user-b612-api.snow.me
+[Script]
+B612=type=http-response, pattern=^https:\/\/user-b612-api\.snow\.me\/v1\/(purchase|subscription|subscriber|status), requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/b612.js
