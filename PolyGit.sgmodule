@@ -1,0 +1,7 @@
+#!name= 𝗣𝗼𝗹𝘆𝗚𝗶𝘁
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname= buy.itunes.apple.com
+[Script]
+PolyGit=type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://gist.github.com/aleotoidayy/e6d7dd08db69c9b40d56fbf78796028e/raw/981fdff04dbfbc29c2250a7c20802c42af8bd8e4/polygit.js, requires-body=true, max-size=-1, timeout=60
