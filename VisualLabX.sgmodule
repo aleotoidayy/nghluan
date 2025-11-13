@@ -1,0 +1,7 @@
+#!name= 𝗩𝗶𝘀𝘂𝗮𝗹 𝗟𝗮𝗯𝗫
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname= api.revenuecat.com
+[Script]
+VisualLabx = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/visuallabx.js
