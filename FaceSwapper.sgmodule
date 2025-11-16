@@ -1,0 +1,7 @@
+#!name= 𝗙𝗮𝗰𝗲𝗦𝘄𝗮𝗽𝗽𝗲𝗿
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% api-*.facereplacerext.com
+[Script]
+FaceSwapper=type=http-response, pattern=^https?:\/\/api-.*\.facereplacerext\.com\/api\/rest\/commerce\/integrate\/vip\/perform, requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/faceswapper.js
