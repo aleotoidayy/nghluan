@@ -4,4 +4,4 @@
 [MITM]
 hostname= api.rc-backup.com
 [Script]
-revenuecat = type=http-response, pattern=^https:\/\/api\.rc-backup\.com\/.+\/(receipts$|subscribers\/[^/]+$), requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/documents.js
+Documents = type=http-response, pattern=^https:\/\/api\.rc-backup\.com\/.+\/(receipts$|subscribers\/[^/]+$), requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/documents.js
