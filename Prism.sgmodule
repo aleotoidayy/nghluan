@@ -1,0 +1,7 @@
+#!name= 𝗣𝗿𝗶𝘀𝗺
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = apis.naver.com
+[Script]
+Prism = type=http-response,pattern=^https:\/\/apis\.naver\.com\/prism\/prism-auth-api\/.*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/prism.js
