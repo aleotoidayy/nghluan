@@ -4,6 +4,7 @@ icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/chanquangcao.j
 
 rules:
   - DOMAIN,api-adservices.apple.com,REJECT
+  - DOMAIN,d3mzcvneegwck1.cloudfront.net,REJECT
   - DOMAIN,darnobedienceupscale.com,REJECT
   - DOMAIN,fundingchoicesmessages.google.com,REJECT
   - DOMAIN,gg-039vip023-sd2n-c1-c9.malaysiawest.cloudapp.azure.com,REJECT
@@ -35,6 +36,7 @@ rules:
   - DOMAIN-SUFFIX,moloco.com,REJECT
   - DOMAIN-SUFFIX,net88.tv,REJECT
   - DOMAIN-SUFFIX,nibaz.com,REJECT
+  - DOMAIN-SUFFIX,omnoqkmpakh.com,REJECT
   - DOMAIN-SUFFIX,pangle.io,REJECT
   - DOMAIN-SUFFIX,playhaybet.pro,REJECT
   - DOMAIN-SUFFIX,rirki.com,REJECT
