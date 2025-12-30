@@ -6,8 +6,8 @@ http:
     - sayhentaii.art
     - sayhentaii.me
     - sayhentaii.live
-
-script:
+scripting
+  script:
     - match: ^https?:\/\/.*sayhentaii\.(art|me|live)
       name: Sayhentaii
       type: response
