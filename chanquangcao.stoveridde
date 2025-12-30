@@ -2,28 +2,6 @@ name: Chặn Quảng Cáo
 desc: by aleoo
 icon: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/chanquangcao.jpg
 
-http:
-  mitm:
-    - sayhentaii.art
-    - sayhentaii.me
-    - sayhentaii.live
-
-scripting:
-  script:
-    - match: ^https?:\/\/.*sayhentaii\.(art|me|live)
-      name: Sayhentaii
-      type: response
-      require-body: true
-      max-size: 0
-      binary-body-mode: 0
-      debug: 1
-      timeout: 10
-
-script-providers:
-  Sayhentaii:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/sayhentaii.js
-    interval: 86400
-
 rules:
   - DOMAIN,api-adservices.apple.com,REJECT
   - DOMAIN,darnobedienceupscale.com,REJECT
