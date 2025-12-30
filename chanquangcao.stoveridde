@@ -16,7 +16,7 @@ scripting:
       require-body: true
       max-size: 0
       binary-body-mode: 0
-      debug=1
+      debug: 1
       timeout: 10
 
 script-providers:
