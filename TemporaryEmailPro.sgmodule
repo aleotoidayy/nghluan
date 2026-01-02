@@ -1,0 +1,7 @@
+#!name= 𝗧𝗲𝗺𝗽𝗼𝗿𝗮𝗿𝘆 𝗘𝗺𝗮𝗶𝗹 𝗣𝗿𝗼 
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname= api.revenuecat.com
+[Script]
+TemporaryEmailPro=type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/temporaryemailpro.js
