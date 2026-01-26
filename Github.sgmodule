@@ -4,4 +4,4 @@
 [MITM]
 hostname = %APPEND% api.github.com
 [Script]
-Github = type=http-response, pattern=https://api.github.com/graphql, requires-body=true, max-size=-1, timeout=60, script-path=https://gist.github.com/aleotoidayy/eaaa7968133182b4c8b372b66f41fd7d/raw/5615b22c30d829d1aa801590a60f40e213fac930/github.js
+Github = type=http-response, pattern=https://api.github.com/graphql, requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/github.js
