@@ -4,7 +4,7 @@ function findUrl(_reg) {
   }
 }
 const features = [
-  { "id": "live_lookup", "rank": 1, "status": "Included", "isFree": false },
+    { "id": "live_lookup", "rank": 1, "status": "Included", "isFree": false },
     { "id": "auto_spam_block", "rank": 2, "status": "Included", "isFree": false },
     { "id": "series_blocking", "rank": 3, "status": "Included", "isFree": false },
     { "id": "no_ads", "rank": 4, "status": "Included", "isFree": false },
