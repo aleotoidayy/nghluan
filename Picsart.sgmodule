@@ -8,4 +8,6 @@
 hostname = %APPEND% api.picsart.com
 
 [Script]
-http-request https://api.picsart.com/gw-v2/shop/subscription/apple/purchases script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js, requires-body=true, timeout=5
+Picsart=type=http-request,pattern=https:\/\/api\.picsart\.com\/gw-v2\/shop\/subscription\/apple\/purchases$,requires-body=true,timeout=5,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
+
+Picsartt=type=http-response,pattern=^https:\/\/api\.picsart\.com\/gw-v2\/cloud-storage\/v1\/me\/storages$,timeout=60,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsartt.js
