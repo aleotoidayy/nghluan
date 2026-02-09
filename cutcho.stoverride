@@ -22,24 +22,24 @@ http:
       name: AdGuard
       type: response
       requires-body: true
-————————————————————————————————————————————————————
+
     - match: https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses
       name: AlightMotion
       type: response
       requires-body: true
       timeout: 5
-————————————————————————————————————————————————————
+
     - match: ^https:\/\/api\.alohaprofile\.com/v\d\/(profile_info|subscription_postback|profile_oauth)
       name: AlohaVPN
       type: response
       requires-body: true
-————————————————————————————————————————————————————
+
     - match: ^https:\/\/photos\.adobe\.io\/v2\/accounts*
       name: Lightroom
       type: response
       requires-body: true
       max-size: 0
-————————————————————————————————————————————————————
+
     - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
       name: Locket
       type: response
@@ -51,12 +51,12 @@ http:
       name: DeleteHeader
       type: response
       timeout: 60
-————————————————————————————————————————————————————
+
     - match: https://api-mobile.soundcloud.com/configuration/ios
       name: SoundCloud
       type: response
       requires-body: true
-————————————————————————————————————————————————————
+
     - match: ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$
       name: Spotify_Proto
       type: response
@@ -68,15 +68,13 @@ http:
       name: Spotify_Json
       type: request
       timeout: 10
-————————————————————————————————————————————————————
+
     - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
       name: YouTube
       type: response
       require-body: true
       max-size: -1
       binary-mode: 1
-
-————————————————————————————————————————————————————
 
   rewrite:
     - (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
@@ -85,32 +83,22 @@ http:
     - ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject-200
     - ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject-200
 
-————————————————————————————————————————————————————
-
 script-providers:
   AdGuard:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/adguard.js
     interval: 86400
 
-————————————————————————————————————————————————————
-
   AlightMotion:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/alightmotion.js
     interval: 86400
-
-————————————————————————————————————————————————————
 
   AlohaVPN:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/aloha.js
     interval: 86400
 
-————————————————————————————————————————————————————
-
   Lightroom:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js
     interval: 86400
-
-————————————————————————————————————————————————————
 
   Locket:
     url: https://raw.githubusercontent.com/aleotoidayy/klinhh/klinhh/revenuecat.js
@@ -120,13 +108,9 @@ script-providers:
     url: https://raw.githubusercontent.com/aleotoidayy/klinhh/klinhh/deleteheader.js
     interval: 86400
 
-————————————————————————————————————————————————————
-
   SoundCloud:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloud.js
     interval: 86400
-
-————————————————————————————————————————————————————
 
   Spotify_Proto:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js
@@ -135,8 +119,6 @@ script-providers:
   Spotify_Json:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
     interval: 86400
-
-————————————————————————————————————————————————————
 
   YouTube:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/youtube.js
