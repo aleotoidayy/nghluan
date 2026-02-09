@@ -60,7 +60,7 @@ http:
     - match: ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$
       name: Spotify_Proto
       type: response
-      require-body: true
+      requires-body: true
       binary-mode: true
       timeout: 10
 
@@ -72,9 +72,9 @@ http:
     - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
       name: YouTube
       type: response
-      require-body: true
+      requires-body: true
       max-size: -1
-      binary-mode: 1
+      binary-mode: true
 
   rewrite:
     - (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
