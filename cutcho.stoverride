@@ -17,15 +17,8 @@ http:
     - www.youtube.com
     - s.youtube.com
     - youtubei.googleapis.com
-    - accounts.google.com
     - nicegram.cloud
-    - api.picsart.com
-    - ap*.intsig.net
-    - premium*.truecaller.com
-    - api-sub.meitu.com
     - mobile-api.adguard.org
-    - iap.etm.tech
-    - api.calm.com
 
   script:
     - match: ^https?:\/\/mobile-api\.adguard\.org\/api\/.+\/ios_validate_receipt
@@ -47,7 +40,7 @@ http:
       require-body: true
       max-size: 0
     - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-      name: revenuecat
+      name: Locket
       type: response
       require-body: true
       max-size: -1
@@ -60,6 +53,9 @@ http:
       name: SoundCloudGo
       type: response
       require-body: true
+    - match: ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$
+      name: spotify-qx-header
+      type: request
     - match: ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/
       name: spotify-json
       type: request
@@ -69,7 +65,7 @@ http:
       require-body: true
       binary-mode: true
     - match: ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch)
-      name: youtube.response
+      name: YouTube
       type: response
       require-body: true
       max-size: -1
@@ -79,50 +75,13 @@ http:
       type: response
       require-body: true
       max-size: 0
-    - match: https://api.calm.com/(me|device|ios/receipt)
-      name: calm
-      type: response
-      require-body: true
-      timeout: 10
-    - match: https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?
-      name: Camscanner
-      type: response
-      require-body: true
-    - match: https://api.picsart.com/gw-v2/shop/subscription/apple/purchases
-      name: Picsart
-      type: request
-      require-body: true
-      timeout: 5
-    - match: ^https://premium-(.+)\.truecaller\.com/v\d/(subscriptions|products\/apple)
-      name: Truecaller
-      type: response
-      require-body: true
-      max-size: 0
-    - match: ^https:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info_by_group
-      name: wink
-      type: response
-      require-body: true
-      max-size: 0
-    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$)
-      name: vsco
-      type: response
-      require-body: true
-      timeout: 5
-    - match: ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers(\/.*?)?$)
-      name: vscoo
-      type: request
-      require-body: true
-      timeout: 5
-    - match: ^https?:\/\/api\.revenuecat\.com\/v1\/(subscribers\/[^\/]+$|receipts$)
-      name: Sharp
-      type: response
-      require-body: true
-    - match: ^https:\/\/iap\.etm\.tech\/receipts
-      name: SpeedTestMaster
-      type: response
-      require-body: true
-      max-size: -1
-      timeout: 300
+
+  rewrite:
+    - (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+    - ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject-200
+    - ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject-200
+    - ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject-200
+    - ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject-200
 
 script-providers:
   AdGuard:
@@ -137,7 +96,7 @@ script-providers:
   LightRoom:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/lightroom.js
     interval: 86400
-  revenuecat:
+  Locket:
     url: https://raw.githubusercontent.com/aleotoidayy/klinhh/klinhh/revenuecat.js
     interval: 86400
   deleteHeader:
@@ -146,42 +105,18 @@ script-providers:
   SoundCloudGo:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/soundcloud.js
     interval: 86400
+  spotify-qx-header:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-qx-header.js
+    interval: 86400
   spotify-json:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
     interval: 86400
   spotify-proto:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js
     interval: 86400
-  youtube.response:
+  YouTube:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/youtube.js
     interval: 86400
   Nicegram:
     url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js
-    interval: 86400
-  calm:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/calm.js
-    interval: 86400
-  Camscanner:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/camscanner.js
-    interval: 86400
-  Picsart:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/picsart.js
-    interval: 86400
-  Truecaller:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/truecaller.js
-    interval: 86400
-  wink:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/wink.js
-    interval: 86400
-  vsco:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vsco.js
-    interval: 86400
-  vscoo:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/vscoo.js
-    interval: 86400
-  Sharp:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/sharpai.js
-    interval: 86400
-  SpeedTestMaster:
-    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/speedtestmaster.js
     interval: 86400
