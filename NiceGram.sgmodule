@@ -2,7 +2,7 @@
 #!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
 
 [MITM]
-hostname = %APPEND% nicegram.cloud
+hostname = %APPEND% nicegram.cloud, restore-access.indream.app
 
 [Script]
 Nicegram = type=http-response,pattern=^https?:\/\/(nicegram\.cloud\/api\/v\d\/user\/info|restore-access\.indream\.app\/restoreAccess),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/nicegram.js,script-update-interval=0
