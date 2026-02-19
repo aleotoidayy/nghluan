@@ -1,5 +1,1 @@
-var Q = JSON.parse($response.body);
-Q.data.user.lifetime_subscription = true;
-Q.data.user.store_subscription = true;
-Q.data.user.subscription = true;
-$done({body : JSON.stringify(Q)});
+const url=$request.url;let aleoo;try{aleoo=JSON.parse($response.body);}catch(e){$done({});}let modified=false;if(/user\/info/.test(url)){if(aleoo.data&&aleoo.data.user){aleoo.data.user={...aleoo.data.user,"subscription":true,"store_subscription":true,"subscriptionPlus":true,"lifetime_subscription":true};modified=true;}}if(/unblock-feature\/get-settings/.test(url)){aleoo.premium=true;modified=true;}if(/restoreAccess/.test(url)){aleoo["data"]={"premiumAccess":true};modified=true;}if(/transaction/.test(url)){aleoo.subscriptions=[{"premiumAccess":true}];modified=true;}function finalizeResponse(content){const headers={...$response.headers};if(headers['Content-Length']){delete headers['Content-Length'];}return{status:200,headers:headers,body:JSON.stringify(content)};}if(modified){$done(finalizeResponse(aleoo));}else{$done({});}
