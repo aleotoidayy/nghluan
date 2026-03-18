@@ -1,15 +1,14 @@
 let aleoo = JSON.parse($response.body);
 
 if (aleoo.data && aleoo.data.viewer) {
-  aleoo.data.viewer.copilotLicenseType = "COPILOT_INDIVIDUAL";
-  
+  aleoo.data.viewer.copilotLicenseType = "COPILOT_INDIVIDUAL_PRO_PLUS";
   aleoo.data.viewer.isProPlan = true;
   aleoo.data.viewer.isEmployee = true;
   aleoo.data.viewer.hasAppleIapSubscription = true;
   aleoo.data.viewer.viewerIsCopilotCodingAgentEnabled = true;
   
   if (aleoo.data.viewer.copilotConsumptiveUser) {
-    aleoo.data.viewer.copilotConsumptiveUser.entitlement = 300.0;
+    aleoo.data.viewer.copilotConsumptiveUser.entitlement = 1500.0;
   }
   
   if (aleoo.data.viewer.copilotLimitedUser) {
