@@ -1,12 +1,12 @@
 {
-  "name": "The Shadowverse",
+  "name": "aleotoidayy",
   "identifier": "com.aleoo.app.premium",
   "iconURL": "https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/kittyy.JPG",
   "apps": [
     {
       "name": "Glow cho Facebook",
       "bundleIdentifier": "com.facebook.Facebook",
-      "developerName": "The Shadowverse",
+      "developerName": "aleoo",
       "subtitle": "Gọn gàng. Thông minh. Của riêng bạn.",
       "localizedDescription": "Tính năng:\n- Tải bất cứ thứ gì bạn thích — video, ảnh, Reels và cả story\n- Xem ẩn danh. Xem story và chỉ đánh dấu đã xem khi bạn muốn\n- Lo lắng về việc vô tình thả tim? Giờ thì bạn có thể yên tâm\n- Cài đặt linh hoạt, trực quan — được tùy chỉnh theo ý bạn\n\nCài đặt Glow có sẵn khi nhấn giữ vào bất kỳ tab nào",
       "iconURL": "https://raw.githubusercontent.com/dayanch96/Glow/refs/heads/main/Sileo/icon.png",
@@ -66,7 +66,7 @@
           "minOSVersion": "15.1",
           "date": "2026-03-31T00:00:00+07:00",
           "size": 184968806,
-          "downloadURL": "https://release-assets.githubusercontent.com/github-production-release-asset/1160461461/276eab51-12bd-45b1-b3d1-0512947e5407?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-01T09%3A03%3A59Z&rscd=attachment%3B+filename%3DGlow_FB_v1.3.1.ipa&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-01T08%3A03%3A35Z&ske=2026-04-01T09%3A03%3A59Z&sks=b&skv=2018-11-09&sig=Bf%2Fv1jod1V5SjK%2FMl58cEA9mrwBFsvnzgG0ND2ddweQ%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NTAzNTU4MCwibmJmIjoxNzc1MDMxOTgwLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.x6BU568SK-umdLo7jTmJ0ArsWkrZjsbIr8xWWGYA-Sc&response-content-disposition=attachment%3B%20filename%3DGlow_FB_v1.3.1.ipa&response-content-type=application%2Foctet-stream",
+          "downloadURL": "https://github.com/aleoo/AltStore/releases/download/0.0.1/glow_555.0.0.ipa",
           "localizedDescription": "Glow phiên bản 1.3.1\n- Mã hóa lại video nhanh hơn nhờ cải thiện xử lý âm thanh\n- Thêm hỗ trợ ngôn ngữ Thổ Nhĩ Kỳ"
         }
       ],
