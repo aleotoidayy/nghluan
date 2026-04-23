@@ -1,0 +1,7 @@
+#!name= 𝗗𝗼𝗸𝗮
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname= %APPEND% *.yindoka.com
+[Script]
+Doka=type=http-response,pattern=^https:\/\/[^\/]+\.yindoka\.com\/apple\/(check-subscription-status|vip-detail)\/?(\?.*)?$,requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/doka.js
