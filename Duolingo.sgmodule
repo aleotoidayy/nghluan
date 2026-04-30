@@ -1,0 +1,9 @@
+#!name= 𝗗𝘂𝗼𝗹𝗶𝗻𝗴𝗼
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+#! verify 🌚
+
+[MITM]
+hostname = ios-api-cf.duolingo.com
+
+[Script]
+Duolingo=type=http-response,pattern=^https:\/\/ios-api-cf\.duolingo\.com\/\d{4}-\d{2}-\d{2}\/friends\/users\/[^\/]+\/profile-info\/?(\?.*)?$,requires-body=true,timeout=5,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/duolingo.js
