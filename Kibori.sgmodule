@@ -1,0 +1,10 @@
+#!name= 𝗞𝗶𝗯𝗼𝗿𝗶
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = firebaseremoteconfig.googleapis.com
+
+[Script]
+Kibori-RQ=type=http-request,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/[^\/]+\/namespaces\/firebase:fetch(\?.*)?$,timeout=60,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/kibori-rq.js
+
+Kibori-RS=type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/[^\/]+\/namespaces\/firebase:fetch(\?.*)?$,requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/kibori-rs.js
