@@ -49,6 +49,7 @@ const mapping = {
   'Fiery': ['premium'],
   'Fileball': ['filebox_pro'],
   'Fin': ['premium', 'com.circles.fin.premium.yearly'],
+  'Finch': ['plus', 'finch_plus_yearly_new_50_usd'],
   'FinancialNote': ['category'],
   'Focused%20Work': ['Pro'],
   'FoJiCam/': ['ProVersionLifeTime'],
