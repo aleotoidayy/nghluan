@@ -1,0 +1,8 @@
+#!name= 𝗦𝘂𝗽𝗲𝗿𝘄𝗮𝗹𝗹
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% subscriptions-api.superwall.com
+
+[Script]
+Superwall=type=http-response,pattern=^https:\/\/subscriptions-api\.superwall\.com\/subscriptions-api\/public\/v1\/(users\/[^\/]+\/entitlements|redeem)\/?(\?.*)?$,requires-body=true,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/superwall.js
