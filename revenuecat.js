@@ -165,7 +165,6 @@ const mapping = {
   'WhiteCloud': ['allaccess','wc_pro_1y'],
   'WidgetCat': ['MiaoWidgetPro'],
   'WidgetSmith': ['Premium'],
-  'Web%20Video%20Cast': ['Premium', 'premium.regular.price'],
   'Wozi': ['wozi_pro_2023'],
   'Yosum/': ['Premium'],
   'YzyFit/': ['pro', 'yzyfit_lft_v2'],
@@ -177,7 +176,8 @@ const mapping = {
   '%E8%AC%8E%E5%BA%95%E6%99%82%E9%90%98': ['Entitlement.Pro'],
   '%E8%AC%8E%E5%BA%95%E9%BB%91%E8%86%A0': ['Entitlement.Pro'],
   '%E8%A8%80%E5%A4%96%E7%AD%86%E8%A8%98/': ['Premium'],
-  '%E8%BD%A6%E7%A5%A8%E7%A5%A8': ['vip+watch_vip']
+  '%E8%BD%A6%E7%A5%A8%E7%A5%A8': ['vip+watch_vip'],
+  '%57%65%62%20%56%69%64%65%6F%20%43%61%73%74': ['Premium', 'premium.regular.price']
 };
 
 var ua = $request.headers['User-Agent'] || $request.headers['user-agent'], aleo = JSON.parse($response.body), aleooo = { 'is_sandbox': false, 'ownership_type': 'PURCHASED', 'billing_issues_detected_at': null, 'period_type': 'normal', 'expires_date': '2099-01-01T00:00:00Z', 'grace_period_expires_date': null, 'unsubscribe_detected_at': null, 'original_purchase_date': '2026-01-01T00:00:00Z', 'purchase_date': '2026-01-01T00:00:00Z', 'store': 'app_store' }, aleooooo = { 'grace_period_expires_date': null, 'purchase_date': '2026-01-01T00:00:00Z', 'product_identifier': 'com.aleoo.premium.yearly', 'expires_date': '2099-01-01T00:00:00Z' }, match = Object.keys(mapping).find(key => ua.includes(key)); aleo['request_date_ms'] = '2099-09-09T01:04:17Z'; match ? ((key, product_id) => { product_id ? (aleooooo['product_identifier'] = product_id, aleo['subscriber']['subscriptions'][product_id] = aleooo) : aleo['subscriber']['subscriptions']['com.aleoo.premium.yearly'] = aleooo; aleo['subscriber']['entitlements'] = {}; key.includes('&') ? key.split('&').forEach(entitlement => { aleo['subscriber']['entitlements'][entitlement] = aleooooo; }) : aleo['subscriber']['entitlements'][key] = aleooooo; })(...mapping[match]) : (aleo['subscriber']['subscriptions']['com.aleoo.premium.yearly'] = aleooo, aleo['subscriber']['entitlements']['com.aleoo.premium.yearly'] = aleooooo); $done({ 'body': JSON.stringify(aleo) });
