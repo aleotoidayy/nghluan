@@ -1,0 +1,8 @@
+#!name= 𝗖𝗹𝗼𝘂𝗱𝗠𝗼𝗼𝗻
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = api.prod.cloudmoonapp.com
+
+[Script]
+CloudMoon=type=http-response,pattern=api.prod.cloudmoonapp.com,requires-body=true,timeout=5,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/cloudmoon.js
