@@ -165,6 +165,7 @@ const mapping = {
   'WhiteCloud': ['allaccess','wc_pro_1y'],
   'WidgetCat': ['MiaoWidgetPro'],
   'WidgetSmith': ['Premium'],
+  'Web%20Video%20Cast': ['Premium', 'premium.regular.price'],
   'Wozi': ['wozi_pro_2023'],
   'Yosum/': ['Premium'],
   'YzyFit/': ['pro', 'yzyfit_lft_v2'],
