@@ -1,0 +1,8 @@
+#!name= 𝗧𝗼𝗸𝘆𝗼 𝗟𝗼𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝗽𝗼𝗼𝗳𝗲𝗿
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% gs-loc.apple.com, gs-loc-cn.apple.com, bluedot.is.autonavi.com, bluedot.is.autonavi.com.gds.alibabadns.com
+
+[Script]
+Tokyo Spoofer = type=http-response,pattern=^https?:\/\/(?:gs-loc(?:-cn)?\.apple\.com|bluedot\.is\.autonavi\.com(?:\.gds\.alibabadns\.com)?)\/clls\/wloc(?:\?.*)?$,requires-body=1,binary-body-mode=1,max-size=1048576,timeout=10,script-path=tokyo-spoofer.js
