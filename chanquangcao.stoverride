@@ -69,7 +69,7 @@ rules:
   - DOMAIN-SUFFIX,jhigcalfa.com,REJECT
   - DOMAIN-SUFFIX,jpyosglaxonk.com,REJECT
   - DOMAIN-SUFFIX,lavtcyojffug.com,REJECT
-  - DOMAIN-SUFFIX,maticooads.com
+  - DOMAIN-SUFFIX,maticooads.com,REJECT
   - DOMAIN-SUFFIX,mawqudogjpu.com,REJECT
   - DOMAIN-SUFFIX,mediation.unity3d.com,REJECT
   - DOMAIN-SUFFIX,moloco.com,REJECT
