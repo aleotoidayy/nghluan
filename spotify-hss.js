@@ -44,7 +44,14 @@ function scanAndReplace(buffer, max, t1, t2, r1, r2, label) {
   return false;
 }
 
-let bodyBytes = body instanceof Uint8Array ? body : $buffer.from(body, 'binary');
+let bodyBytes;
+if (body instanceof Uint8Array) {
+  bodyBytes = body;
+} else if ($buffer && $buffer.from) {
+  bodyBytes = new Uint8Array($buffer.from(body, 'binary'));
+} else {
+  bodyBytes = new Uint8Array(body);
+}
 
 if (url.includes('/browsita/')) {
   parseField6(bodyBytes);
@@ -54,4 +61,4 @@ if (url.includes('/browsita/')) {
   scanAndReplace(bodyBytes, 666, 0xF2, 0x01, 0xF7, 0x07, 'CuonTrang');
 }
 
-$done({ body: bodyBytes instanceof Uint8Array ? bodyBytes.buffer : $buffer.toString(bodyBytes, 'binary') });
+$done({ body: bodyBytes.buffer.slice(bodyBytes.byteOffset, bodyBytes.byteOffset + bodyBytes.byteLength) });
