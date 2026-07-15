@@ -17,6 +17,7 @@ const OVERRIDE_ASSIGNED_VALUES = [
       }
     },
 
+    ////---------
     {
             "propertyId": {
               "scope": "ios-feature-settings-platform",
@@ -12563,15 +12564,18 @@ function modifyAssignedValues(values) {
           break;
       }
     }
+    //console.log("==========");  
   }
 
   console.log("assignedValuesMapObj processed");
 }
 
 function modifyAttributes(attributes) {
+  // 1 year from now
   const oneYearFromNow = new Date();
   oneYearFromNow.setUTCFullYear(oneYearFromNow.getUTCFullYear() + 1);
 
+  // ISO8601 UTC string (equivalent to ISO8601DateFormatter + UTC)
   const isoDate = oneYearFromNow.toISOString();
 
   attributes["ads"] = { boolValue: false };
@@ -12584,7 +12588,7 @@ function modifyAttributes(attributes) {
   attributes["is-eligible-premium-unboxing"] = { boolValue: true };
   attributes["name"] = { stringValue: "Spotify Premium" };
   attributes["nft-disabled"] = { stringValue: "1" };
-  attributes["offline"] = { boolValue: true };
+  attributes["offline"] = { boolValue: true }; // allow downloading
   attributes["on-demand"] = { boolValue: true };
   attributes["payments-initial-campaign"] = { stringValue: "default" };
   attributes["player-license"] = { stringValue: "premium" };
@@ -12602,15 +12606,17 @@ function modifyAttributes(attributes) {
   delete attributes['ad-use-adlogic'];
   delete attributes['ad-catalogues'];
 
-  delete attributes['shuffle'];
+  delete attributes['shuffle']; // 移除 shuffle 属性，由 shuffle-eligible 控制
 
   delete attributes["payment-state"];
   delete attributes["last-premium-activation-date"];
 
+  // Modern logout prevention
   delete attributes["on-demand-trial"];
   delete attributes["on-demand-trial-in-progress"];
   delete attributes["smart-shuffle"];
 
+  // Additional keys
   delete attributes["at-signal"];
   delete attributes["feature-set-id-masked"];
   delete attributes["strider-key"];
@@ -12651,21 +12657,25 @@ function overrideAssignedValues(target) {
   let n=0;
   let f=0;
 
+  // 把 blacklist 转成 Set（加速查询）
   const blacklistSet = new Set(
     blacklist.map(item =>
     `${item.propertyId.scope}::${item.propertyId.name}`
       )
   );
 
+  // ① 先放 OVERRIDE（优先）
   for (const item of OVERRIDE_ASSIGNED_VALUES) {
     const key = `${item.propertyId.scope}::${item.propertyId.name}`;
 
+    // blacklist 直接跳过
     if (blacklistSet.has(key)) { n++; continue;  }
 
     result.push(item); f++;
     map.set(key, true);
   }
 
+  // ② 再补 target 里没有的
   for (const item of target) {
     const key = `${item.propertyId.scope}::${item.propertyId.name}`;
 
@@ -12677,6 +12687,7 @@ function overrideAssignedValues(target) {
     // }
   }
 
+  // ③ 覆盖回 target
   target.length = 0;
   for (const item of result) {
     target.push(item);
