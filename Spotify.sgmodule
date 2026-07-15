@@ -1,6 +1,14 @@
 #! name= 𝗦𝗽𝗼𝘁𝗶𝗳𝘆
 #! desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
 
+[Rule]
+AND,((DOMAIN-SUFFIX, spotify.com), (PROTOCOL, QUIC)),REJECT
+DOMAIN,aet.spotify.com,REJECT
+
+[URL Rewrite]
+^https:\/\/(spclient\.wg|.*-spclient)\.spotify\.com(:443)?\/pendragon - reject
+^https:\/\/.*37i9dQZF1EYkqdzj48dyYq - reject
+
 [Header Rewrite]
 http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
 
@@ -10,4 +18,7 @@ hostname = %APPEND% spclient.wg.spotify.com, *spclient.spotify.com
 [Script]
 spotify-qx-header = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-qx-header.js
 spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-json.js
+spotify-gabo = type=http-request,pattern=^https:\/\/(.*-spclient\.spotify\.com(:443)?|spclient\.wg\.spotify\.com)\/gabo-receiver-service,requires-body=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-gabo.js
 spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-proto.js,script-update-interval=0
+spotify-protoo = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-update-interval=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-protoo.js
+spotify-hss = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(browsita|casita|scrollsita)\/v\d+\/(browse|home\/default|scroll\/spotify),requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/spotify-hss.js
