@@ -1,0 +1,24 @@
+name: 𝗧𝗼𝗸𝘆𝗼 𝗟𝗼𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝗽𝗼𝗼𝗳𝗲𝗿
+desc: 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+icon: https://anhh.vercel.app/japan.png
+
+http:
+  mitm:
+    - gs-loc.apple.com
+    - gs-loc-cn.apple.com
+    - bluedot.is.autonavi.com
+    - bluedot.is.autonavi.com.gds.alibabadns.com
+
+  script:
+    - match: ^https?:\/\/(?:gs-loc(?:-cn)?\.apple\.com|bluedot\.is\.autonavi\.com(?:\.gds\.alibabadns\.com)?)\/clls\/wloc(?:\?.*)?$
+      name: Tokyo
+      type: response
+      require-body: true
+      binary-body-mode: 1
+      max-size: 1048576
+      timeout: 10
+
+script-providers:
+  Tokyo:
+    url: https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/tokyo-spoofer.js
+    interval: 86400
