@@ -1,0 +1,7 @@
+#!name= 𝗥𝗼𝗹𝗹𝗶𝗲𝗖𝗮𝗺
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM]
+hostname = %APPEND% asia-southeast1-timecam-cc107.cloudfunctions.net, be-prod-1.snapedit.app
+[Script]
+RollieCam=type=http-response,pattern=asia-southeast1-timecam-cc107.cloudfunctions.net||be-prod-1.snapedit.app||assets.snapedit.app,requires-body=true,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/rolliecam.js
