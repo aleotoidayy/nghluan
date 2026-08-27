@@ -21,11 +21,11 @@ for (const key in list) {
   if (new RegExp(`^${key}`, `i`).test(ua)) {
     obj["me"]["active_subscriptions_ids"] = [list[key].id];
     obj["me"]["active_bundle_subscriptions"] = [{
-      "expiry": "2099-09-09T09:09:09+00:00",
+      "expiry": "2099-01-01T00:00:00+00:00",
       "product_id": list[key].id,
       "features": ["unlock"]
     }];
-    obj["settings"]["__identity__"]["expiration"] = "2099-09-09T09:09:09+00:00";
+    obj["settings"]["__identity__"]["expiration"] = "2099-01-01T00:00:00+00:00";
     break;
   }
 }
