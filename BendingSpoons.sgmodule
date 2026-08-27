@@ -1,0 +1,7 @@
+#!name= 𝗕𝗲𝗻𝗱𝗶𝗻𝗴𝗦𝗽𝗼𝗼𝗻𝘀
+#!desc= 𝗯𝘆 𝗮𝗹𝗲𝗼𝗼
+
+[MITM] 
+hostname = %APPEND% *.oracle.bendingspoonsapps.com
+[Script]
+BendingSpoons=type=http-response,pattern=^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/aleotoidayy/nghluan/aleoo/bendingspoons.js
